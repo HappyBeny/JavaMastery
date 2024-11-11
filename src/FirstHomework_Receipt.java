@@ -1,4 +1,4 @@
-public class firstHomework_Receipt {
+public class FirstHomework_Receipt {
     public static void main(String[] args) {
         int point = 4;
         double percent = ((double) point/5) * 100;
