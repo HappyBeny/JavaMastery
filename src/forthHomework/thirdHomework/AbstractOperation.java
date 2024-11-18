@@ -1,4 +1,4 @@
-package thirdHomework;
+package forthHomework.thirdHomework;
 
 public abstract class AbstractOperation {
 

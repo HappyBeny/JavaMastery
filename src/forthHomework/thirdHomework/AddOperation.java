@@ -1,6 +1,6 @@
-package thirdHomework;
+package forthHomework.thirdHomework;
 
-public class AddOperation extends AbstractOperation{
+public class AddOperation extends AbstractOperation {
 
     @Override
     public double operate(int a, int b){
