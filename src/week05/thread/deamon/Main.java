@@ -1,4 +1,4 @@
-package week05.deamon;
+package week05.thread.deamon;
 
 import javax.swing.*;
 

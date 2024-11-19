@@ -1,10 +1,7 @@
-package week05.multi;
+package week05.thread.priority;
 
 public class Main {
     public static void main(String[] args) {
-
-        // 걸리는 시간이나 동작을 예측할 수가 없다.
-
         Runnable task1 = () -> {
             for (int i = 0; i < 100; i++) {
                 System.out.print("$");
@@ -17,11 +14,13 @@ public class Main {
             }
         };
 
-
         Thread thread1 = new Thread(task1);
-        thread1.setName("thread1");
+        thread1.setPriority(8);
+        int threadPriority = thread1.getPriority();
+        System.out.println("threadPriority = " + threadPriority);
+
         Thread thread2 = new Thread(task2);
-        thread2.setName("thread2");
+        thread2.setPriority(2);
 
         thread1.start();
         thread2.start();

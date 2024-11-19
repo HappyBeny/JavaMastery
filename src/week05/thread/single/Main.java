@@ -1,4 +1,4 @@
-package week05.single;
+package week05.thread.single;
 
 public class Main {
     public static void main(String[] args) {
