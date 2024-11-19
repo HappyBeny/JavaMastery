@@ -7,10 +7,7 @@ public class Main {
         try {
             CalculatorApp.start();
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
-
-
-        // 구현 2.
     }
 }
