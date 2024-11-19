@@ -1,4 +1,4 @@
-package forthHomework.thirdHomework;
+package forthHomework;
 
 import java.util.Scanner;
 

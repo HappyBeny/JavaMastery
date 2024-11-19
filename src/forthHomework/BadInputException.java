@@ -1,4 +1,4 @@
-package forthHomework.thirdHomework;
+package forthHomework;
 
 public class BadInputException extends Exception {
     public BadInputException(String type) {

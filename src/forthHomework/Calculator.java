@@ -1,4 +1,4 @@
-package forthHomework.thirdHomework;
+package forthHomework;
 
 public class Calculator {
     private int firstNumber;
