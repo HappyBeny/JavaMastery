@@ -25,9 +25,50 @@ public class Main {
                 new Book(17L, "레버리지", "롭 무어", "경제", 16200)
         );
 
-        // 문제에 해당하는 코드 작성 부분
-        bookList.stream().
+        // 여행 책 조회
+        bookList.stream().filter(book -> book.getCategory().equals("여행"))
+                .forEach(f -> System.out.println("카테고리가 여행인 책 제목: " + f.getBookName()));
+        System.out.println();
 
+        // 16200원 이하 책 조회
+        bookList.stream().filter(book -> book.getPrice() <= 16200)
+                .forEach(f -> System.out.println("가격 16200원 이하 책 제목: " + f.getBookName()));
+        System.out.println();
+
+        // 제목에 "경제"가 들어간 책 조회
+        bookList.stream().filter(book -> book.getBookName().contains("경제"))
+                .forEach(f -> System.out.println("책 제목에 '경제'가 포함된 책 제목: " + f.getBookName()));
+        System.out.println();
+
+        // 가장 비싼 책 가격 double로 출력
+        double maxPrice = bookList.stream().mapToDouble(Book::getPrice)
+                .max().getAsDouble();
+        System.out.println("책 목록 중 가장 비싼 금액: " + maxPrice);
+        System.out.println();
+
+        // IT계열 책 가격 합
+        double sum = bookList.stream().filter(book -> book.getCategory().equals("IT"))
+                .mapToDouble(Book::getPrice)
+                .sum();
+        System.out.println("카테고리 IT 책들의 가격 합: " + sum);
+        System.out.println();
+
+        // IT책 40% 할인 이벤트
+        List<Book> discountedBookList = bookList.stream().filter(book -> book.getCategory().equals("IT"))
+                .map(book -> {
+                    book.setPrice(book.getPrice() * 0.6);
+                    return book;
+                }).toList();
+
+        // IT책 40% 할인...이건 이벤트가 아니라 아예 바꿔버림. 서점 페업행사에 어울릴듯
+//        List<Book> discountedBookList = bookList.stream().filter(book -> book.getCategory().equals("IT"))
+//                .peek(book -> book.setPrice(book.getPrice() * 0.6)).toList();
+
+
+        for (Book book : discountedBookList) {
+            System.out.println("할인된 책 제목: " + book.getBookName());
+            System.out.println("할인된 책 가격: " + book.getPrice() + "\n");
+        }
 
     }
 }
